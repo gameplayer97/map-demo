@@ -26,7 +26,8 @@
         try {
           const data = JSON.parse(event.data);
           if (data.type === "moveTo") {
-            map.setCenter(data.position);
+            // map.setCenter(data.position);
+            map.setZoomAndCenter(16, data.position)
             AMap.plugin("AMap.Marker", () => {
               const marker = new AMap.Marker({
                 position: data.position,
